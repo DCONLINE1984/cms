@@ -1,0 +1,5 @@
+$base-color: #ae4b33;
+@include extjs-panel-ui(
+    $ui: 'mainContent',
+    $ui-body-background-color: rgb(252,235,213)
+);

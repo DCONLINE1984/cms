@@ -21,7 +21,6 @@ Ext.define('Cms.view.main.MainView', {
     bodyBorder: false,
     defaults: {
         collapsible: true,
-        split: true,
         bodyPadding: '15 10 15 10'
     },
     items: [
@@ -32,6 +31,18 @@ Ext.define('Cms.view.main.MainView', {
             margin: '0 0 0 0',
             width: 200,
             region: 'west',
+            height: 800,
+            style: 'border-right:1px solid #ae4b33;',
+            dockedItems: [{
+                xtype: 'toolbar',
+                dock: 'bottom',
+                items: [{
+                    xtype: 'image',
+                    docked: 'bottom',
+                    src: "/uploads/alanasidebar.jpg",
+                    width: "100%"
+                }]
+            }],
             items: [{
                 xtype: 'checkboxfield',
                 fieldLabel: 'Administrator Mode',
@@ -50,8 +61,8 @@ Ext.define('Cms.view.main.MainView', {
         }, {
             collapsible: false,
             region: 'center',
+            ui: 'mainContent',
             overflowY: 'auto',
-            baseCls: 'centerContainer',
             id: 'blogPostContainer',
             layout:{
                 type: 'vbox',
