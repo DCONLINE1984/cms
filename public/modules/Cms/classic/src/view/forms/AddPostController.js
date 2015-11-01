@@ -1,20 +1,33 @@
+/**
+ * The add post controller
+ * @author Dean Clow
+ */
+
 Ext.define("Cms.view.forms.AddPostController", {
     extend: 'Ext.app.ViewController',
     alias: 'controller.addpost',
     
+    /**
+     * Submit a blog post
+     * @returns void
+     */
     submit: function() {
         var url = '/blogpost/addblogpost';
+        var mode = this.getView().mode;
+        var blogId = this.getView().blogId;
         var parameters = {
-            content: Ext.getCmp("txtBody").getValue(),
-            tags: Ext.getCmp("tags").getValue()
-        }
+            content     : Ext.getCmp("txtBody").getValue(),
+            tags        : Ext.getCmp("tags").getValue(),
+            mode        : mode,
+            id          : blogId
+        };
         console.log(url);
         Ext.Ajax.request({
             url: url,
             params: parameters,
             method: 'POST',
             success: function(response) {
-                var message = Ext.Msg.alert('Success', 'Post added successfully', Ext.emptyFn);
+                var message = Ext.Msg.alert('Success', 'Post updated successfully', Ext.emptyFn);
                 setTimeout(function() {
                     try{
                         message.hide();

@@ -1,3 +1,8 @@
+/**
+ * The main model
+ * @author Dean Clow
+ */
+
 Ext.define("Cms.view.main.MainModel", {
     extend  : 'Ext.app.ViewModel',
     alias   : 'viewmodel.mainmodel',
@@ -17,6 +22,7 @@ Ext.define("Cms.view.main.MainModel", {
                         container.add({
                             xtype: 'blogpost',
                             blogContent: records[i].data.html,
+                            blogId: records[i].data.id,
                             height: 'auto',
                             id: 'blogpost'+(i+1)
                         });

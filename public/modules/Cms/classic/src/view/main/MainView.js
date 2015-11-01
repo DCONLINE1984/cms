@@ -28,7 +28,7 @@ Ext.define('Cms.view.main.MainView', {
         {
             title: 'Arkadie',
             floatable: false,
-            collapsed: true,
+            collapsed: false,
             margin: '0 0 0 0',
             width: 200,
             region: 'west',

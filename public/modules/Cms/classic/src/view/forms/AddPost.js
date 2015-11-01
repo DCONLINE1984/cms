@@ -1,10 +1,18 @@
+/**
+ * The add post form
+ * @author Dean Clow
+ */
+
 Ext.define('Cms.view.forms.AddPost',{
     xtype: 'addpost',
     extend: 'Ext.form.Panel',
     requires: ["Cms.view.forms.AddPostModel",
-               "Cms.view.forms.AddPostController"],
+               "Cms.view.forms.AddPostController",
+               "Cms.model.BlogPost"],
     viewModel: 'addpost',
     controller: 'addpost',
+    blogId: 0,
+    mode: 'add',
     width: '97%',
     layout: 'form',
     items: [{
@@ -19,18 +27,17 @@ Ext.define('Cms.view.forms.AddPost',{
             labelAlign  : 'top'
         },
         items: [{
-           xtype: 'textarea',
+           xtype: 'textfield',
            labelWidth: 100,
            id: 'tags',
            width: '100%',
-           height: 100,
-           fieldLabel: 'Tags (1 per line):',
+           fieldLabel: 'Tags (comma separated):',
            bind: '{tags}'
         }, {
             xtype: 'htmleditor',
             id: 'txtBody',
             width: '100%',
-            height: 300,
+            height: 360,
             bind: '{html}', //TODO: fix this
             padding: 0,
             listeners: {

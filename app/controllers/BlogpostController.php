@@ -14,6 +14,17 @@ class BlogpostController extends CommonController
     }
     
     /**
+     * Get a single blog post
+     * @return Json
+     */
+    public function getBlogPostAction()
+    {
+        $this->setJsonResponse();
+        $service = new BlogPostService();
+        return $service->getSinglePost($this->request->get("id"));
+    }
+    
+    /**
      * Add a new blog post
      * @return Json
      */
@@ -21,9 +32,17 @@ class BlogpostController extends CommonController
     {
         $this->setJsonResponse();
         $service = new BlogPostService();
-        $result = $service->addPost(array(  'content' => $this->request->getPost("content"),
-                                            'tags'    => $this->request->getPost("tags"),
-                                            'created' => date("Y-m-d H:i:s")));
+        $id = $this->request->getPost("id");
+        if(empty($id)){
+            $result = $service->addPost(array(  'content' => $this->request->getPost("content"),
+                                                'tags'    => $this->request->getPost("tags"),
+                                                'created' => date("Y-m-d H:i:s")));
+        }else{
+            //update an existing post
+            $result = $service->editPost(array(  'content' => $this->request->getPost("content"),
+                                                 'tags'    => $this->request->getPost("tags"),
+                                                 'id'      => $id));
+        }
         if(!$result){
             return array('success' => false,
                          'message' => 'Failed to add blog post');
@@ -31,13 +50,21 @@ class BlogpostController extends CommonController
         return array('success' => true);
     }
     
-    public function voteAction($testId)
+    /**
+     * Delete a post
+     * @return Json
+     */
+    public function deletePostAction()
     {
-        //forward to another action
-        return $this->dispatcher->forward(array(
-            'action'  => 'test',
-            'params'  => array(1) //parameter to send over (i.e. /test/1)
-        ));
+        $this->setJsonResponse();
+        $service = new BlogPostService();
+        $id = $this->request->getPost("id");
+        $result = $service->delete($id);
+        if(!$result){
+            return array('success' => false,
+                         'message' => 'Failed to add blog post');
+        }
+        return array('success' => true);
     }
 }
 

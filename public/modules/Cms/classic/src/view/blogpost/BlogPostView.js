@@ -8,6 +8,13 @@ Ext.define('Cms.view.blogpost.BlogPostView', {
     xtype: 'blogpost',
     requires: ["Cms.view.blogpost.BlogPostController"],
     blogContent : "",
+    blodId: 0,
+    getBlogId: function() {
+        return this.blogId;
+    },
+    setBlogId: function(id) {
+        this.blogId = id;
+    },
     controller: 'blogpost',
     width: '75%',
     border: 1,

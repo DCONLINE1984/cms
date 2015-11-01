@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>Cms</title>
+    <title>Arkadie</title>
 
     <style type="text/css">
         .centerContainer{
@@ -43,7 +43,8 @@
                 profile = tags.desktop ? 'classic' : 'modern';
                 //profile = tags.phone ? 'modern' : 'classic';
             }
-
+            profile = 'classic'; //TODO: build mobile version
+            
             Ext.manifest = profile; // this name must match a build profile name
 
             // This function is called once the manifest is available but before

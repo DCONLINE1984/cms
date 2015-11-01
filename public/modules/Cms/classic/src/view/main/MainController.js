@@ -1,9 +1,21 @@
+/**
+ * The main controller
+ * @author Dean Clow
+ */
+
 Ext.define("Cms.view.main.MainController", {
     extend: 'Ext.app.ViewController',
     alias: 'controller.maincontroller',
     
+    /**
+     * Toggle admin mode on/off
+     */
     adminMode: 'off',
     
+    /**
+     * Add a new blog entry
+     * @returns {undefined}
+     */
     addnew: function() {
         new Ext.Window({
             padding: 10,
@@ -19,6 +31,10 @@ Ext.define("Cms.view.main.MainController", {
         }).show();
     },
     
+    /**
+     * Toggle admin mode on/off
+     * @returns void
+     */
     toggleAdminMode: function() {
         var me = this;
         var toolbar = Ext.ComponentQuery.query("#toptoolbar");
