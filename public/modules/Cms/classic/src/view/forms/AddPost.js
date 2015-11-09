@@ -99,6 +99,7 @@ Ext.define('Cms.view.forms.AddPost',{
             text: 'Submit',
             align: 'center',
             style: 'float: right;',
+            width: '100%',
             handler: 'submit'
         }]
     }]

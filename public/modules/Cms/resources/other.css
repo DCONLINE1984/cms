@@ -1,0 +1,58 @@
+/**
+* The right container styles
+*/
+#blogPostContainer .x-panel-body-mainContent{
+    background: #FCEBD5 !important;
+}
+
+/**
+* The border style for each blog post
+*/
+.blogPost .x-panel-default-outer-border-trbl{
+    border-color: #ae4b33 !important;
+}
+
+/**
+* Left navigation styles
+*/
+#leftNav-body, #leftNav{
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-right-color: #ae4b33 !important;
+}
+
+/**
+* The arrow on the left container
+*/
+.x-panel-header, .x-tool-img{
+    background-color:#ae4b33 !important;
+}
+
+/**
+* The 'Arkadie' header text
+*/
+#leftNav_header-title-textEl{
+    color:#FFFFFF !important;
+}
+
+/**
+* Button styles
+*/
+.x-btn, .x-btn-button-default-toolbar-small{
+    background-color:#ae4b33 !important;
+    border-color: #ae4b33 !important;
+}
+.x-btn-inner-default-small span, .x-btn-button-default-toolbar-small span, .x-btn-icon span, .x-btn-wrap-plain-toolbar-small.x-btn-arrow-right:after, .x-btn-inner{
+    color:#ffffff !important;
+}
+.x-btn-over{
+    background-color:#793423 !important;
+    border-color: #793423 !important;
+}
+
+/**
+* Window styles
+*/
+.x-window-default{
+    border-color:#793423 !important;
+}

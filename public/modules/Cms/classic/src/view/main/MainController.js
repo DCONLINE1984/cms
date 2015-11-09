@@ -53,5 +53,13 @@ Ext.define("Cms.view.main.MainController", {
                 return;
         }
         me.adminMode = 'on';
+    },
+    
+    /**
+     * Change the theme for the app
+     * @returns void
+     */
+    themeing: function() {
+        console.log('hi');
     }
 });

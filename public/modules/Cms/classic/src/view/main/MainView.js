@@ -27,22 +27,13 @@ Ext.define('Cms.view.main.MainView', {
         {
             title: 'Arkadie',
             floatable: false,
+            id: 'leftNav',
             collapsed: false,
             margin: '0 0 0 0',
             width: 200,
             region: 'west',
             height: 800,
             style: 'border-right:1px solid #ae4b33;',
-            dockedItems: [{
-                xtype: 'toolbar',
-                dock: 'bottom',
-                items: [{
-                    xtype: 'image',
-                    docked: 'bottom',
-                    src: "/uploads/alanasidebar.jpg",
-                    width: "100%"
-                }]
-            }],
             items: [{
                 xtype: 'checkboxfield',
                 fieldLabel: 'Administrator Mode',
@@ -56,7 +47,20 @@ Ext.define('Cms.view.main.MainView', {
                 text: 'Add Post',
                 iconCls: 'x-fa fa-plus',
                 width: '100%',
-                handler: 'addnew'
+                handler: 'addnew',
+                margin: '0 0 3 0'
+            }, {
+                xtype: 'button',
+                text: 'Theming',
+                iconCls: 'x-fa fa-css3',
+                width: '100%',
+                handler: 'themeing'
+            }, {
+                xtype: 'image',
+                docked: 'bottom',
+                src: "/uploads/alanasidebar.jpg",
+                width: "100%",
+                margin: '15 0 0 0'
             }]
         }, {
             collapsible: false,
