@@ -8,9 +8,12 @@ Ext.define('Cms.view.main.MainView', {
     requires: [
         'Ext.layout.container.Border',
         'Cms.view.blogpost.BlogPostView',
+        'Cms.view.page.PageView',
+        'Cms.view.modals.PageManagementView',
         'Cms.view.forms.AddPost',
         'Cms.view.main.MainController',
-        'Cms.view.main.MainModel'
+        'Cms.view.main.MainModel',
+        'Cms.model.Pages'
     ],
     layout: 'border',
     controller: 'maincontroller',
@@ -48,20 +51,41 @@ Ext.define('Cms.view.main.MainView', {
                 iconCls: 'x-fa fa-plus',
                 width: '100%',
                 handler: 'addnew',
+                textAlign: 'left',
+                margin: '0 0 3 0'
+            }, {
+                xtype: 'button',
+                text: 'Page Management',
+                iconCls: 'x-fa fa-folder',
+                width: '100%',
+                handler: 'pageManagement',
+                textAlign: 'left',
                 margin: '0 0 3 0'
             }, {
                 xtype: 'button',
                 text: 'Theming',
                 iconCls: 'x-fa fa-css3',
                 width: '100%',
-                handler: 'themeing'
+                handler: 'themeing',
+                textAlign: 'left'
             }, {
                 xtype: 'image',
                 docked: 'bottom',
                 src: "/uploads/alanasidebar.jpg",
                 width: "100%",
-                margin: '15 0 0 0'
-            }]
+                margin: '15 0 15 0'
+            }, {
+                xtype: 'button',
+                text: 'Home',
+                iconCls: 'x-fa fa-home',
+                margin: '0 0 3 0',
+                width: '100%',
+                handler: 'home',
+                textAlign: 'left'
+            }, {
+                xtype: 'panel',
+                id: 'leftNavStaticPages'
+            }] //the static page buttons are loaded on load
         }, {
             collapsible: false,
             region: 'center',

@@ -29,6 +29,34 @@ Ext.define("Cms.view.main.MainModel", {
                     }
                 }
             }
+        },
+        pages: {
+            model           : 'Cms.model.Pages',
+            pageSize        : 1000,
+            autoLoad        : true,
+            listeners: {
+                load: function(store, records) {
+                    //load the blog posts into the app
+                    var container = Ext.getCmp("leftNavStaticPages");
+                    container.removeAll();
+                    for(var i=0;i<records.length;i++){
+                        var record = records[i];
+                        if(parseInt(record.data.showOnMenu)==0){
+                            continue;
+                        }
+                        container.add({
+                            xtype: 'button',
+                            text: records[i].data.title,
+                            pageId: records[i].data.id,
+                            iconCls: 'x-fa fa-square-o',
+                            width: '100%',
+                            handler: 'loadPage',
+                            textAlign: 'left',
+                            margin: '0 0 3 0'
+                        });
+                    }
+                }
+            }
         }
     }
 });

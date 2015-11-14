@@ -277,6 +277,10 @@
             "exclude": ["fashion"]
         },
         {
+            "path": "resources/default.css",
+            "update": "delta"
+        },
+        {
             "path": "resources/other.css",
             "update": "delta"
         }

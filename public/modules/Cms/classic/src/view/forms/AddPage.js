@@ -3,15 +3,14 @@
  * @author Dean Clow
  */
 
-Ext.define('Cms.view.forms.AddPost',{
-    xtype: 'addpost',
+Ext.define('Cms.view.forms.AddPage',{
+    xtype: 'addpage',
     extend: 'Ext.form.Panel',
-    requires: ["Cms.view.forms.AddPostModel",
-               "Cms.view.forms.AddPostController",
-               "Cms.model.BlogPost"],
-    viewModel: 'addpost',
-    controller: 'addpost',
-    blogId: 0,
+    requires: ["Cms.view.forms.AddPageModel",
+               "Cms.view.forms.AddPageController"],
+    viewModel: 'addpage',
+    controller: 'addpage',
+    pageId: 0,
     mode: 'add',
     width: '97%',
     layout: 'form',
@@ -28,18 +27,22 @@ Ext.define('Cms.view.forms.AddPost',{
             labelAlign  : 'top'
         },
         items: [{
-           xtype: 'textfield',
-           labelWidth: 100,
-           id: 'tags',
-           width: '100%',
-           fieldLabel: 'Tags (comma separated):',
-           bind: '{tags}'
+            xtype: 'textfield',
+            width: '100%',
+            fieldLabel: 'Title:',
+            id: 'addPage_title',
+            labelWidth: 100
+        }, {
+           xtype: 'checkboxfield',
+           id: 'addPage_showOnMenu',
+           fieldLabel: 'Show on menu',
+           labelWidth: 100
         }, {
             xtype: 'htmleditor',
-            id: 'txtBody',
+            id: 'addPageBody',
             width: '100%',
-            height: 360,
-            bind: '{html}', //TODO: fix this
+            height: 300,
+            bind: '{html}',
             padding: 0,
             listeners: {
                 render: function(editor) {
