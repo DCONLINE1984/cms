@@ -19,7 +19,7 @@ Ext.define('Cms.view.blogpost.BlogPostView', {
     controller: 'blogpost',
     width: '74%',
     border: 1,
-    margin: '0 0 0 0',
+    margin: '0 0 10 0',
     initComponent: function() {
         var me = this;
         this.items = [{
@@ -47,7 +47,8 @@ Ext.define('Cms.view.blogpost.BlogPostView', {
             xtype: 'panel',
             cls: 'blogPost',
             padding: '0 15 0 10',
-            margin: '10 10 10 10',
+            margin: '10 10 20 10',
+            height: 'auto',
             html: me.blogContent
         }];
         this.callParent();

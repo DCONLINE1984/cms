@@ -23,7 +23,7 @@ Ext.define("Cms.view.main.MainModel", {
                             xtype: 'blogpost',
                             blogContent: records[i].data.html,
                             blogId: records[i].data.id,
-                            height: 'auto',
+                            height: '900',
                             id: 'blogpost'+(i+1)
                         });
                     }
