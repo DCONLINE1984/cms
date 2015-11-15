@@ -4,14 +4,15 @@
  */
 
 //the iframe!!!!!
-var iframe = '<iframe onload="iframeLoaded()" id="iframe" style="position:absolute; height:100%; border: none; width:110%;" src="{{src}}"></iframe>';
+var iframe = '<iframe onload="iframeLoaded()" id="iframe" style="position:absolute; height:100%; border: none; width:110%;" scrolling="no" src="{{src}}"></iframe>';
 
 /**
  * When the iframe is loaded, set the height of the container
  * @returns void
  */
 function iframeLoaded(){
-    Ext.getCmp("pageViewContent").setHeight($('iframe').contents().height());
+    var height = ($('iframe').contents().height()) + 20;
+    Ext.getCmp("pageViewContent").setHeight(height);
 }
 
 Ext.define('Cms.view.page.PageView', {

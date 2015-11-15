@@ -40,7 +40,8 @@ Ext.define('Cms.view.main.MainView', {
             style: 'border-right:1px solid #ae4b33;',
             items: [{
                 xtype: 'checkboxfield',
-                bodyPadding: '0 10 0 10',
+                padding: 0,
+                margin: 0,
                 fieldLabel: 'Administrator Mode',
                 labelWidth: 160,
                 width: '100%',
@@ -75,13 +76,14 @@ Ext.define('Cms.view.main.MainView', {
                 hidden: true,
                 width: '100%',
                 handler: 'themeing',
+                margin: '0 0 15 0',
                 textAlign: 'left'
             }, {
                 xtype: 'image',
                 docked: 'bottom',
                 src: "/uploads/alanasidebar.jpg",
                 width: "100%",
-                margin: '15 0 15 0'
+                margin: '0 0 15 0'
             }, {
                 xtype: 'button',
                 text: 'Home',

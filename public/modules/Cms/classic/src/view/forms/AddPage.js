@@ -81,9 +81,9 @@ Ext.define('Cms.view.forms.AddPage',{
                                                 success: function (fp, result) {
                                                     var result = Ext.util.JSON.decode(result.response.responseText);
                                                     var imagePath = ('/uploads/' + result.filename);
-                                                    var html = Ext.getCmp("txtBody").getValue();
+                                                    var html = Ext.getCmp("addPageBody").getValue();
                                                     html += '<img src="' + imagePath + '" alt="" title="" />';
-                                                    Ext.getCmp("txtBody").setValue(html); //set the new value
+                                                    Ext.getCmp("addPageBody").setValue(html); //set the new value
                                                     Ext.getCmp("wndImageUpload").hide(); //set the image upload
                                                 },
                                                 failure: function (fp, result) {
