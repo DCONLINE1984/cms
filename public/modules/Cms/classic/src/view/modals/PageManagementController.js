@@ -7,6 +7,10 @@ Ext.define("Cms.view.modals.PageManagementController", {
     extend: 'Ext.app.ViewController',
     alias: 'controller.pagemanagement',
     
+    /**
+     * Add a new page
+     * @returns void
+     */
     addPage: function() {
         new Ext.Window({
             padding: 10,

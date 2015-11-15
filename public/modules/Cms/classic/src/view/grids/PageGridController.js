@@ -7,6 +7,11 @@ Ext.define("Cms.view.grids.PageGridController", {
     extend: 'Ext.app.ViewController',
     alias: 'controller.pagegrid',
     
+    /**
+     * Edit a static page
+     * @param obj element
+     * @returns void
+     */
     editPage: function(element) {
         new Ext.Window({
             padding: 10,
@@ -34,6 +39,11 @@ Ext.define("Cms.view.grids.PageGridController", {
         Ext.getCmp("pageManagementModal").destroy();
     },
     
+    /**
+     * Delete a page
+     * @param Obj element
+     * @returns void
+     */
     deletePage: function(element) {
         var me = this;
         var vm = this.getViewModel();

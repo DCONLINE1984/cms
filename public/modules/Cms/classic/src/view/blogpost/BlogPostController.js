@@ -7,6 +7,10 @@ Ext.define("Cms.view.blogpost.BlogPostController", {
     extend: 'Ext.app.ViewController',
     alias: 'controller.blogpost',
     
+    /**
+     * Edit a blog post
+     * @returns void
+     */
     edit: function() {
         var me      = this;
         var blogId  = me.getView().getBlogId();
@@ -38,6 +42,10 @@ Ext.define("Cms.view.blogpost.BlogPostController", {
         });
     },
     
+    /**
+     * Delete a blog post
+     * @returns void
+     */
     delete: function() {
         Ext.MessageBox.confirm('Confirmation', 'Are you sure ... ?', confirmFunction);
         var me = this;

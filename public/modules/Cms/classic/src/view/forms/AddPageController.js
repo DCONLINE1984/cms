@@ -8,7 +8,7 @@ Ext.define("Cms.view.forms.AddPageController", {
     alias: 'controller.addpage',
     
     /**
-     * Submit a blog post
+     * Submit a new page
      * @returns void
      */
     submit: function() {

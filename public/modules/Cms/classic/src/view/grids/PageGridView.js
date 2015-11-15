@@ -1,3 +1,8 @@
+/**
+ * The page grid view
+ * @author Dean Clow
+ */
+
 Ext.define('Cms.view.grids.PageGridView', {
     alias       : 'widget.pageGrid',
     extend      : 'Ext.grid.Panel',

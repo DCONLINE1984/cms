@@ -69,10 +69,10 @@ Ext.define("Cms.view.main.MainController", {
         console.log('hi');
     },
     
-    addPage: function() {
-        
-    },
-    
+    /**
+     * Load the page management modal
+     * @returns void
+     */
     pageManagement: function() {
         new Ext.Window({
             padding: 10,
@@ -90,6 +90,11 @@ Ext.define("Cms.view.main.MainController", {
         }).show();
     },
     
+    /**
+     * Load a static page
+     * @param Obj element
+     * @returns void
+     */
     loadPage: function(element) {
         var me = this;
         var vm = me.getViewModel();
@@ -108,6 +113,10 @@ Ext.define("Cms.view.main.MainController", {
         });
     },
     
+    /**
+     * Go back home! (loads the blog again)
+     * @returns void
+     */
     home: function() {
         var me = this;
         var vm = me.getViewModel();
@@ -115,46 +124,3 @@ Ext.define("Cms.view.main.MainController", {
         store.reload();
     }
 });
-
-/*
-var url = '/pagebuilder/addpage';
-        //build the parameters
-        var parameters = {
-            content: 'Test Content',
-            title: 'Test Title'
-        };
-        Ext.Ajax.request({
-            url: url,
-            params: parameters,
-            method: 'POST',
-            success: function(response) {
-                Ext.Viewport.setMasked(false);
-                var response = Ext.JSON.decode(response.responseText);
-                if(response.success==false){
-                    Ext.Viewport.setMasked(false);
-                    Ext.Msg.alert('An error occurred', 
-                                  response.message,
-                                  Ext.emptyFn);
-                }else{
-                    //go back to the schedule screen
-                    var view = Ext.getCmp("navigationView");
-                    Ext.Viewport.animateActiveItem(view, me.slideRightTransition);
-                    Ext.getCmp("centerSchedule").getController().search();
-                    
-                    var message = Ext.Msg.alert('Success', 'Appointment Created', Ext.emptyFn);
-                    setTimeout(function() {
-                        try{
-                            message.hide();
-                        }catch(e){}
-                    }, 4000);
-                }
-            },
-            failure: function(response) {
-                Ext.Viewport.setMasked(false);
-                Ext.Msg.alert('An error occurred', 
-                              'Failed to load player. Please contact admin team.', 
-                              Ext.emptyFn);
-            }
-        });
-        //element.pageId
- */
