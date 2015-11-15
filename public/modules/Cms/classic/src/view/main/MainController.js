@@ -43,8 +43,14 @@ Ext.define("Cms.view.main.MainController", {
             var t = toolbar[i];
             if(me.adminMode=='on'){
                 t.hide();
+                Ext.getCmp("addPostButton").hide();
+                Ext.getCmp("themingButton").hide();
+                Ext.getCmp("pageManagementButton").hide();
             }else{
                 t.show(); //show all toolbars
+                Ext.getCmp("addPostButton").show();
+                Ext.getCmp("themingButton").show();
+                Ext.getCmp("pageManagementButton").show();
             }
         }
         //set the mode

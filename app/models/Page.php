@@ -1,11 +1,11 @@
 <?php
 
 /**
- * The blog post model
- * @author Dean Clow
+ * The page model
+ * @author Dean Clow 
  */
 
-class BlogPost extends \Phalcon\Mvc\Model
+class Page extends \Phalcon\Mvc\Model
 {
     /**
      * The id
@@ -20,10 +20,10 @@ class BlogPost extends \Phalcon\Mvc\Model
     public $content;
     
     /**
-     * Holds the tags
+     * Holds the title
      * @var String
      */
-    public $tags;
+    public $title;
     
     /**
      * Holds the created date
@@ -32,13 +32,25 @@ class BlogPost extends \Phalcon\Mvc\Model
     public $created;
 
     /**
+     * Holds the modified date
+     * @var String
+     */
+    public $modified;
+    
+    /**
+     * Show on menu flag
+     * @var Int
+     */
+    public $show_on_menu = 0;
+    
+    /**
      * Returns table name mapped in the model.
      *
      * @return string
      */
     public function getSource()
     {
-        return 'blog_post';
+        return 'page';
     }
 
     /**

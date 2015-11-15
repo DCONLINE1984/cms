@@ -62,7 +62,7 @@ class BlogpostController extends CommonController
         $result = $service->delete($id);
         if(!$result){
             return array('success' => false,
-                         'message' => 'Failed to add blog post');
+                         'message' => 'Failed to add delete post');
         }
         return array('success' => true);
     }

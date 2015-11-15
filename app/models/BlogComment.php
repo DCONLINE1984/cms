@@ -1,8 +1,12 @@
 <?php
 
+/**
+ * The blog comment
+ * @author Dean Clow
+ */
+
 class BlogComment extends \Phalcon\Mvc\Model
 {
-
     /**
      *
      * @var integer
@@ -82,5 +86,4 @@ class BlogComment extends \Phalcon\Mvc\Model
     {
         return parent::findFirst($parameters);
     }
-
 }

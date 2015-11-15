@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The image uploader service
+ * The blog post service
  * @author Dean CLow
  */
 

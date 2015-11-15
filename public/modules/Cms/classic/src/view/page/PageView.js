@@ -3,7 +3,10 @@
  * @author Dean Clow
  */
 
-var iframe = '<iframe style="height: 100%; border: 0; width:100%;" src="{{src}}"></iframe>';
+var iframe = '<iframe onload="iframeLoaded()" id="iframe" style="position:absolute; height:100%; border: none; width:110%;" src="{{src}}"></iframe>';
+function iframeLoaded(){
+    Ext.getCmp("pageViewContent").setHeight($('iframe').contents().height());
+}
 
 Ext.define('Cms.view.page.PageView', {
     extend: 'Ext.panel.Panel',
@@ -41,6 +44,8 @@ Ext.define('Cms.view.page.PageView', {
         }, {
             xtype: 'panel',
             cls: 'blogPost',
+            layout: 'fit',
+            id: 'pageViewContent',
             padding: '0 15 0 10',
             margin: '10 10 10 10',
             html: me.pageContent

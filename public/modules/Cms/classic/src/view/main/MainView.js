@@ -34,11 +34,13 @@ Ext.define('Cms.view.main.MainView', {
             collapsed: false,
             margin: '0 0 0 0',
             width: 200,
+            bodyPadding: '0 10 15 10',
             region: 'west',
             height: 800,
             style: 'border-right:1px solid #ae4b33;',
             items: [{
                 xtype: 'checkboxfield',
+                bodyPadding: '0 10 0 10',
                 fieldLabel: 'Administrator Mode',
                 labelWidth: 160,
                 width: '100%',
@@ -48,16 +50,20 @@ Ext.define('Cms.view.main.MainView', {
             }, {
                 xtype: 'button',
                 text: 'Add Post',
+                id: 'addPostButton',
                 iconCls: 'x-fa fa-plus',
                 width: '100%',
                 handler: 'addnew',
+                hidden: true,
                 textAlign: 'left',
                 margin: '0 0 3 0'
             }, {
                 xtype: 'button',
                 text: 'Page Management',
                 iconCls: 'x-fa fa-folder',
+                id: 'pageManagementButton',
                 width: '100%',
+                hidden: true,
                 handler: 'pageManagement',
                 textAlign: 'left',
                 margin: '0 0 3 0'
@@ -65,6 +71,8 @@ Ext.define('Cms.view.main.MainView', {
                 xtype: 'button',
                 text: 'Theming',
                 iconCls: 'x-fa fa-css3',
+                id: 'themingButton',
+                hidden: true,
                 width: '100%',
                 handler: 'themeing',
                 textAlign: 'left'
