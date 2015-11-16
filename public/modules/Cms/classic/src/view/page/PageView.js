@@ -4,7 +4,7 @@
  */
 
 //the iframe!!!!!
-var iframe = '<iframe onload="iframeLoaded()" id="iframe" style="position:absolute; height:100%; border: none; width:110%;" scrolling="no" src="{{src}}"></iframe>';
+var iframe = '<iframe onload="iframeLoaded()" id="iframe" style="position:absolute; height:100%; border: none; width:100%;" scrolling="no" src="{{src}}"></iframe>';
 
 /**
  * When the iframe is loaded, set the height of the container
@@ -22,39 +22,19 @@ Ext.define('Cms.view.page.PageView', {
     pageContent : "",
     cls: 'blogPost',
     controller: 'page',
-    width: '74%',
+    width: '85%',
     border: 1,
     margin: '0 0 0 0',
     initComponent: function() {
         var me = this;
         this.items = [{
-            xtype: 'toolbar',
-            dock: 'top',
-            itemId: 'toptoolbar',
-            margin: '5 5 5 5',
-            border: 0,
-            hidden: true,
-            items: [{
-                xtype: 'tbfill'
-            }, {
-                xtype: 'button',
-                text: 'Edit',
-                iconCls: 'x-fa fa-pencil-square-o',
-                margin: '0 5 0 0',
-                handler: 'edit'
-            }, {
-                xtype: 'button',
-                text: 'Delete',
-                iconCls: 'x-fa fa-trash',
-                handler: 'delete'
-            }]
-        }, {
             xtype: 'panel',
             cls: 'blogPost',
-            layout: 'fit',
             id: 'pageViewContent',
             padding: '0 15 0 10',
             margin: '10 10 10 10',
+            width: '100%',
+            style: 'border-left:1em solid transparent;border-right:1em solid transparent;word-wrap:break-word !important;',
             html: me.pageContent
         }];
         this.callParent();
