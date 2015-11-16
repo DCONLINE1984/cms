@@ -82,7 +82,9 @@ Ext.define('Cms.view.forms.AddPost',{
                                                     html += '<img src="' + imagePath + '" alt="" title="" />';
                                                     Ext.getCmp("txtBody").setValue(html); //set the new value
                                                     Ext.getCmp("wndImageUpload").destroy(); //set the image upload
-                                                    Ext.getCmp("frmFileUpload").destroy();
+                                                    try{
+                                                        Ext.getCmp("frmFileUpload").destroy();
+                                                    }catch(e){}
                                                 },
                                                 failure: function (fp, result) {
                                                     console.log(result);
