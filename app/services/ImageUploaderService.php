@@ -16,7 +16,7 @@ class ImageUploaderService
         //move to the correct location
         $tmpName    = $_FILES["Upload"]["tmp_name"];
         $name       = $_FILES["Upload"]["name"];
-        $result = move_uploaded_file($tmpName, $_SERVER['DOCUMENT_ROOT']."/public/uploads/{$name}");
+        $result = move_uploaded_file($tmpName, $_SERVER['DOCUMENT_ROOT']."/uploads/{$name}");
         if(!$result){
             return false;
         }
