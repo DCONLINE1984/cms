@@ -37,22 +37,28 @@ Ext.define("Cms.view.main.MainController", {
      */
     toggleAdminMode: function() {
         var me = this;
-        var toolbar = Ext.ComponentQuery.query("#toptoolbar");
-        //show all toolbars
-        for(var i=0;i<toolbar.length;i++){
-            var t = toolbar[i];
-            if(me.adminMode=='on'){
-                t.hide();
-                Ext.getCmp("addPostButton").hide();
-                Ext.getCmp("themingButton").hide();
-                Ext.getCmp("pageManagementButton").hide();
-            }else{
-                t.show(); //show all toolbars
-                Ext.getCmp("addPostButton").show();
-                Ext.getCmp("themingButton").show();
-                Ext.getCmp("pageManagementButton").show();
-            }
+        //show the sidebar buttons
+        if(me.adminMode=='on'){
+            Ext.getCmp("addPostButton").hide();
+            Ext.getCmp("themingButton").hide();
+            Ext.getCmp("pageManagementButton").hide();
+        }else{
+            Ext.getCmp("addPostButton").show();
+            Ext.getCmp("themingButton").show();
+            Ext.getCmp("pageManagementButton").show();
         }
+        try{
+            var toolbar = Ext.ComponentQuery.query("#toptoolbar");
+            //show all toolbars
+            for(var i=0;i<toolbar.length;i++){
+                var t = toolbar[i];
+                if(me.adminMode=='on'){
+                    t.hide();
+                }else{
+                    t.show(); //show all toolbars
+                }
+            }
+        }catch(e){}
         //set the mode
         if(me.adminMode=='on'){
                 me.adminMode = 'off';
