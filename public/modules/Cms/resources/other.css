@@ -1,4 +1,24 @@
 /**
+ * Site-wide changes
+ */
+*{
+    font: Arial !important;
+    font-size: 12px !important;
+    font-family: sans-serif !important;
+}
+
+/**
+ * Checkbox styles
+ */
+.x-form-checkbox-default{
+    font: 14px/1 FontAwesome !important;
+}
+
+.x-title-text{
+    font-size:18px !important;
+}
+
+/**
 * The right container styles
 */
 #blogPostContainer .x-panel-body-mainContent{
@@ -24,8 +44,9 @@
 /**
 * The arrow on the left container
 */
-.x-panel-header, .x-tool-img{
+.x-panel-header, .x-tool-img, .x-btn-icon-el{
     background-color:#ae4b33 !important;
+    font: 18px/1 FontAwesome !important;
 }
 
 /**

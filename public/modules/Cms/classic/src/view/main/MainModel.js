@@ -57,6 +57,11 @@ Ext.define("Cms.view.main.MainModel", {
                     }
                 }
             }
+        },
+        customCss: {
+            model           : 'Cms.model.CustomCss',
+            pageSize        : 1000,
+            autoLoad        : false
         }
     }
 });

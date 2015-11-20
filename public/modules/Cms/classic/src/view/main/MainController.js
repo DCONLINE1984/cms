@@ -72,7 +72,30 @@ Ext.define("Cms.view.main.MainController", {
      * @returns void
      */
     themeing: function() {
-        console.log('hi');
+        var modal = new Ext.Window({
+            padding: 10,
+            closable: true,
+            title: 'Theming',
+            id: 'themingModal',
+            autoScroll: true,
+            y: 50, 
+            anchor: "100% 100%", 
+            modal: true,
+            width: '90%',
+            items: [{
+                xtype: 'theming'
+            }]
+        });
+        //load the records
+        var me = this;
+        var vm = this.getViewModel();
+        var store = vm.getStore("customCss");
+        store.load({
+            callback: function(records) {
+                Ext.getCmp("customCss").setValue(records[0].data.css);
+                modal.show();
+            }
+        });
     },
     
     /**

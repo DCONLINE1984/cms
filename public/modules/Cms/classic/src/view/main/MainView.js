@@ -12,8 +12,10 @@ Ext.define('Cms.view.main.MainView', {
         'Cms.view.modals.PageManagementView',
         'Cms.view.forms.AddPost',
         'Cms.view.main.MainController',
+        'Cms.view.modals.ThemingController',
         'Cms.view.main.MainModel',
-        'Cms.model.Pages'
+        'Cms.model.Pages',
+        'Cms.model.CustomCss'
     ],
     layout: 'border',
     controller: 'maincontroller',
